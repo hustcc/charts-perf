@@ -1,4 +1,4 @@
-# chart-perf
+# charts-perf
 
 > G2 栈的性能测试监控工具！防止在迭代过程中性能出现急剧下降！ 线上[运行地址](https://git.hust.cc/charts-perf/)。
 
