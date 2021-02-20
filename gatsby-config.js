@@ -10,6 +10,7 @@ module.exports = {
     title: '👋 Performance Test for Charts',
     siteUrl: `https://git.hust.cc/charts-perf/`,
   },
+  pathPrefix: '/charts-perf',
   plugins: [
     {
       resolve: 'gatsby-plugin-antd',
