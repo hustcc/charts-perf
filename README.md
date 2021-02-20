@@ -1,4 +1,4 @@
-# chart-perf
+# charts-perf [![build](https://github.com/hustcc/charts-perf/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/hustcc/charts-perf/actions/workflows/build.yml)
 
 > G2 栈的性能测试监控工具！防止在迭代过程中性能出现急剧下降！ 线上[运行地址](https://git.hust.cc/charts-perf/)。
 
@@ -27,7 +27,7 @@
  - 使用 Ant Design 进行 UI 绘制
  - 样式使用 less 文件
  - 图表绘制使用 [G2Plot](https://github.com/antvis/G2Plot)
- - ~~~性能测试的 Case 使用 iframe 沙箱运行~~~
+ - ~~性能测试的 Case 使用 iframe 沙箱运行~~
 
 
 ## 运行

@@ -15,21 +15,23 @@ export async function Line(container: HTMLElement, data: Data): Promise<number> 
       enabled: false,
     },
     yAxis: {
-      title: null
+      title: null,
     },
     xAxis: {
-      categories: _.map(data, item => item[X_FIELD]),
+      categories: _.map(data, (item) => item[X_FIELD]),
     },
     chart: size,
-    series: [{
-      data: _.map(data, item => item[Y_FIELD]),
-      showInLegend: false,
-    }],
+    series: [
+      {
+        data: _.map(data, (item) => item[Y_FIELD]),
+        showInLegend: false,
+      },
+    ],
   };
   const startTime = performance.now();
-  
+
   const myChart = new Highcharts.Chart(container, option);
-  
+
   const endTime = performance.now();
 
   await sleep();
