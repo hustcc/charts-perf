@@ -27,7 +27,7 @@
  - 使用 Ant Design 进行 UI 绘制
  - 样式使用 less 文件
  - 图表绘制使用 [G2Plot](https://github.com/antvis/G2Plot)
- - ~~~性能测试的 Case 使用 iframe 沙箱运行~~~
+ - ~~性能测试的 Case 使用 iframe 沙箱运行~~
 
 
 ## 运行
