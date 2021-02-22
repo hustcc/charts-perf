@@ -10,9 +10,7 @@ export const Header = () => {
         <div className="headerTitle">Render Performance Test for Charts 👋 </div>
         <div className="headerFeatureList"></div>
         <div className="headerIcon">
-          <a href="https://github.com/hustcc/charts-perf" style={{ color: '#fff' }} target="_blank">
-            <GithubOutlined />
-          </a>
+          <GithubOutlined color="#fff" />
         </div>
       </div>
     </div>

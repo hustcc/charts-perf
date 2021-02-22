@@ -6,7 +6,7 @@
     "lint": "eslint --ext .ts ./src && prettier --check ./src",
     "fix": "eslint --ext .ts ./src --fix && prettier --write ./src",
     "lint-staged": "lint-staged",
-    "build": "rimraf public && npm run clean && gatsby build --prefix-paths && rimraf public/**/*.js.map",
+    "build": "rimraf public && gatsby build && rimraf public/**/*.js.map",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy": "npm run build && gh-pages -d public"

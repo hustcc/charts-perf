@@ -64,8 +64,17 @@ export const mock = _.memoize((length: number, x: string = X_FIELD, y: string = 
 // 阻塞进程
 export function sleep(ms: number = 50): Promise<boolean> {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true);
+    setTimeout(async () => {
+      if (!_.isUndefined(this?.stopFlag) && this?.stopFlag) {
+        await sleep.apply(this);
+        resolve(true);
+      } else {
+        resolve(true);
+      }
     }, ms);
   });
+}
+
+export default {
+  sleep,
 }

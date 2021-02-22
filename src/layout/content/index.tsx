@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React, { useState } from 'react';
 import { Result } from './result';
 import { Config, IConfig } from './config';
+import { StopBotton } from './stopBotton';
 import { run } from '../../perf/runner';
 import { ENGINES } from '../../common/const';
 import { PerfData, DataAttributeType, OneDataType } from '../../types';
@@ -20,7 +21,7 @@ export const Content = () => {
     { value: 'start', num: 200, label: 'Start' },
     { value: 'end', num: 10000, label: 'End' },
     { value: 'step', num: 200, label: 'Step' },
-  ]); // 数据属性
+  ]); // 数据属性 
 
   function onConfigChange(cfg: IConfig) {
     if (loading) return;
@@ -50,7 +51,7 @@ export const Content = () => {
     }
 
     if (newValue.num < 200) {
-      newValue.num = 200;
+      newValue.num = 200
     } else if (newValue.num > 20000) {
       newValue.num = 20000;
     }
@@ -86,11 +87,16 @@ export const Content = () => {
         </div>
         {loading && (
           <div>
-            <div id="modalBody" className="modalBody">
-              <div className="breadCrumb">
-                <div className="accounted" />
-                <div className="progress" />
-                <div className="progressBackground" />
+            <div id="modalBody" className="modalBody" >
+              <div className="modalMessageControl">
+                <div className="stopRender">
+                  <StopBotton />
+                </div>
+                <div className="breadCrumb" >
+                  <div className="accounted" />
+                  <div className="progress" />
+                  <div className="progressBackground" />
+                </div>
               </div>
             </div>
             <div className="maskDiv" />

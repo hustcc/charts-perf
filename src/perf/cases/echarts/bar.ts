@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as echarts from 'echarts';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import helpers, { X_FIELD, Y_FIELD, size } from '../../../helper';
 
 /**
  * @param container
@@ -28,12 +28,15 @@ export async function Bar(container: HTMLElement, data: Data): Promise<number> {
         type: 'bar',
       },
     ],
+    tooltip: {
+      trigger: 'axis'
+    },
   };
 
   myChart.setOption(option);
   const endTime = performance.now();
 
-  await sleep();
+  await helpers.sleep();
 
   myChart.dispose();
 

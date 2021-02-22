@@ -1,6 +1,6 @@
 import { Line as LineG2plot } from '@antv/g2plot';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import helpers, { X_FIELD, Y_FIELD, size } from '../../../helper';
 
 /**
  * @param container
@@ -20,7 +20,7 @@ export async function Line(container: HTMLElement, data: Data): Promise<number> 
 
   const endTime = performance.now();
 
-  await sleep();
+  await helpers.sleep();
 
   line.destroy();
   // 返回最后的时间

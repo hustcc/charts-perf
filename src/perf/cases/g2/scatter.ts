@@ -1,6 +1,6 @@
 import { Chart } from '@antv/g2';
 import { Data } from '../../../types';
-import { Z_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import helpers, { Z_FIELD, Y_FIELD, size } from '../../../helper';
 
 /**
  * @param container
@@ -19,7 +19,7 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
   chart.render();
   const endTime = performance.now();
 
-  await sleep();
+  await helpers.sleep();
 
   chart.destroy();
   // 返回最后的时间

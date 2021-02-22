@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as echarts from 'echarts';
 import { Data } from '../../../types';
-import { Z_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import helpers, { Z_FIELD, Y_FIELD, size } from '../../../helper';
 
 /**
  * @param container
@@ -26,13 +26,16 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
         type: 'scatter',
       },
     ],
+    tooltip: {
+      trigger: 'axis'
+    },
   };
 
   myChart.setOption(option);
 
   const endTime = performance.now();
 
-  await sleep();
+  await helpers.sleep();
 
   myChart.dispose();
   // 返回最后的时间
