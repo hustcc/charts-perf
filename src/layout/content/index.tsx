@@ -87,12 +87,12 @@ export const Content = () => {
         </div>
         {loading && (
           <div>
-            <div id="modalBody" className="modalBody" >
+            <div id="modalBody" className="modalBody">
               <div className="modalMessageControl">
                 <div className="stopRender">
                   <StopBotton />
                 </div>
-                <div className="breadCrumb" >
+                <div className="breadCrumb">
                   <div className="accounted" />
                   <div className="progress" />
                   <div className="progressBackground" />

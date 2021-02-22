@@ -18,9 +18,9 @@ export const StopBotton = () => {
       type="primary"
       shape="round"
       icon={stopFlag ? <CaretRightOutlined /> : <PauseOutlined />}
-      size='small'
+      size="small"
     >
-      { stopFlag ? 'Start' : 'Pause'}
+      {stopFlag ? 'Start' : 'Pause'}
     </Button>
   );
 };

@@ -1,6 +1,6 @@
 {
   "name": "@antv/perf",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "scripts": {
     "start": "gatsby develop",
     "lint": "eslint --ext .ts ./src && prettier --check ./src",
