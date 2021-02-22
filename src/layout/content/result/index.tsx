@@ -87,9 +87,7 @@ export const Result = (props: Props) => {
     <div className="resultsChartLine">
       {_.map(types, (type) => (
         <div className="resultsChartLineBox" key={type}>
-          <div className="containerTitle">
-            {Icons[type]} {_.find(CHART_TYPES, { value: type }).label}
-          </div>
+          <div className="containerTitle">{Icons[type]} {_.find(CHART_TYPES, { value: type }).label}</div>
           <div className="renderLine">
             {loading ? (
               <div className="loadingSpin">
@@ -101,8 +99,8 @@ export const Result = (props: Props) => {
                 Ctor={Line}
               />
             ) : (
-              <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={false} style={{ paddingTop: '150px' }} />
-            )}
+                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={false} style={{ paddingTop: '150px' }} />
+                )}
           </div>
         </div>
       ))}

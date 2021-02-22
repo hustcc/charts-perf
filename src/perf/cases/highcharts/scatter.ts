@@ -28,6 +28,7 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
       },
     ],
   };
+
   const startTime = performance.now();
 
   const myChart = new Highcharts.Chart(container, option);

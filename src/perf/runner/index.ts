@@ -41,12 +41,8 @@ function changeBreadCrumb({ engine, type, length, amount, count, total }: Change
   // 图表文本
   const chartType = _.find(CHART_TYPES, ({ value }) => _.isEqual(value, type))?.label;
   // 文本显示
-  _.set(
-    document.getElementsByClassName('accounted'),
-    '[0].innerHTML',
-    `render <b>${chartType}</b> on <b>${engine}</b>, ${length} / ${total} `
-  );
-  const percent = `${_.round((count / amount) * 100, 2)}%`;
+  _.set(document.getElementsByClassName('accounted'), '[0].innerHTML', `render <b>${chartType}</b> on <b>${engine}</b>, ${length} / ${total} `);
+  const percent = `${_.round(count / amount * 100, 2)}%`;
   // 完成度显示
   _.set(document.getElementsByClassName('progress'), '[0].innerHTML', `Finished: ${percent}`);
   // 进度条样式
@@ -60,7 +56,7 @@ function changeBreadCrumb({ engine, type, length, amount, count, total }: Change
  */
 export async function run(engines: string[], types: ChartType[], dataAttribute: DataAttributeType): Promise<PerfData> {
   const r: PerfData = {};
-  const seq = getSeq(..._.map(dataAttribute, (item) => item.num));
+  const seq = getSeq(..._.map(dataAttribute, item => item.num));
   // 最大的
   const mockData = mock(seq[seq.length - 1]);
   const total = mockData.length;
@@ -71,9 +67,9 @@ export async function run(engines: string[], types: ChartType[], dataAttribute: 
   for (const engine of engines) {
     for (const type of types) {
       for (const length of seq) {
-        const perfDatum = await runPerfCase(engine, type, length, _.shuffle(mockData.slice(0, length)));
+        const perfDatum = await runPerfCase(engine, type, length, _.shuffle(mockData).slice(0, length));
 
-        count++;
+        count ++;
         changeBreadCrumb({ engine, type, length, amount, count, total });
 
         if (!r[type]) {

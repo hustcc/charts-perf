@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as Highcharts from 'highcharts';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import { X_FIELD, Y_FIELD, size,  sleep } from '../../../helper';
 
 /**
  * @param container
@@ -29,6 +29,7 @@ export async function Bar(container: HTMLElement, data: Data): Promise<number> {
       },
     ],
   };
+  
   const startTime = performance.now();
 
   const myChart = new Highcharts.Chart(container, option);

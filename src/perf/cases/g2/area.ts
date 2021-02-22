@@ -1,6 +1,6 @@
 import { Chart } from '@antv/g2';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import { X_FIELD, Y_FIELD, size,  sleep } from '../../../helper';
 
 /**
  * @param container
@@ -14,6 +14,7 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
     ...size,
   });
   chart.data(data);
+  chart.line().position(`${X_FIELD}*${Y_FIELD}`);
   chart.area().position(`${X_FIELD}*${Y_FIELD}`);
 
   chart.render();
