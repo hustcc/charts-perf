@@ -3,7 +3,7 @@ import { M } from 'miz'; // ES6
 
 export const sleepThisObj = {
   stopFlag: false,
-}
+};
 
 /**
  * 创建一个 div 节点

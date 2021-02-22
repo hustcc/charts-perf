@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as echarts from 'echarts';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size,  sleep } from '../../../helper';
+import { X_FIELD, Y_FIELD, size, sleep } from '../../../helper';
 
 /**
  * @param container

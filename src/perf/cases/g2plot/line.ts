@@ -1,6 +1,6 @@
 import { Line as LineG2plot } from '@antv/g2plot';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size,  sleep } from '../../../helper';
+import { X_FIELD, Y_FIELD, size, sleep } from '../../../helper';
 
 /**
  * @param container

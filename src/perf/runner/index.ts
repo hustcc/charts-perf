@@ -60,7 +60,7 @@ function changeBreadCrumb({ engine, type, length, amount, count, total }: Change
  */
 export async function run(engines: string[], types: ChartType[], dataAttribute: DataAttributeType): Promise<PerfData> {
   const r: PerfData = {};
-  const seq = getSeq(..._.map(dataAttribute, item => item.num));
+  const seq = getSeq(..._.map(dataAttribute, (item) => item.num));
   // 最大的
   const mockData = mock(seq[seq.length - 1]);
   const total = mockData.length;
