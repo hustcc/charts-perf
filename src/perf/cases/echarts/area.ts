@@ -30,7 +30,7 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
       },
     ],
     tooltip: {
-      trigger: 'axis'
+      trigger: 'axis',
     },
   };
 

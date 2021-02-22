@@ -29,7 +29,7 @@ export async function Line(container: HTMLElement, data: Data): Promise<number> 
       },
     ],
     tooltip: {
-      trigger: 'axis'
+      trigger: 'axis',
     },
   };
 

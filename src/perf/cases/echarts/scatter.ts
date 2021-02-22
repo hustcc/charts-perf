@@ -27,7 +27,7 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
       },
     ],
     tooltip: {
-      trigger: 'axis'
+      trigger: 'axis',
     },
   };
 

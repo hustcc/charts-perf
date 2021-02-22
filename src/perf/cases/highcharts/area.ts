@@ -35,7 +35,7 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
       {
         data: _.map(data, item => item[Y_FIELD]),
         showInLegend: false,
-      }，
+      },
     ],
   };
   const startTime = performance.now();
