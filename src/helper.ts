@@ -1,6 +1,10 @@
 import * as _ from 'lodash';
 import { M } from 'miz'; // ES6
 
+export const sleepThisObj = {
+  stopFlag: false,
+};
+
 /**
  * 创建一个 div 节点
  */
@@ -64,7 +68,10 @@ export const mock = _.memoize((length: number, x: string = X_FIELD, y: string = 
 // 阻塞进程
 export function sleep(ms: number = 50): Promise<boolean> {
   return new Promise((resolve) => {
-    setTimeout(() => {
+    setTimeout(async () => {
+      if (!_.isUndefined(sleepThisObj?.stopFlag) && sleepThisObj?.stopFlag) {
+        await sleep();
+      }
       resolve(true);
     }, ms);
   });

@@ -29,6 +29,7 @@ export async function Bar(container: HTMLElement, data: Data): Promise<number> {
       },
     ],
   };
+
   const startTime = performance.now();
 
   const myChart = new Highcharts.Chart(container, option);

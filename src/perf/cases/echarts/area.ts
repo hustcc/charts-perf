@@ -29,6 +29,9 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
         type: 'line',
       },
     ],
+    tooltip: {
+      trigger: 'axis',
+    },
   };
 
   myChart.setOption(option);

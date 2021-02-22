@@ -26,6 +26,9 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
         type: 'scatter',
       },
     ],
+    tooltip: {
+      trigger: 'axis',
+    },
   };
 
   myChart.setOption(option);

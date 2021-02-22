@@ -28,6 +28,9 @@ export async function Line(container: HTMLElement, data: Data): Promise<number> 
         type: 'line',
       },
     ],
+    tooltip: {
+      trigger: 'axis',
+    },
   };
 
   myChart.setOption(option);

@@ -14,6 +14,7 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
     ...size,
   });
   chart.data(data);
+  chart.line().position(`${X_FIELD}*${Y_FIELD}`);
   chart.area().position(`${X_FIELD}*${Y_FIELD}`);
 
   chart.render();

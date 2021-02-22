@@ -28,6 +28,9 @@ export async function Bar(container: HTMLElement, data: Data): Promise<number> {
         type: 'bar',
       },
     ],
+    tooltip: {
+      trigger: 'axis',
+    },
   };
 
   myChart.setOption(option);
