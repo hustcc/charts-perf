@@ -4,15 +4,13 @@ import { Button } from 'antd';
 import { sleepThisObj } from '../../../helper';
 import { PauseOutlined, CaretRightOutlined } from '@ant-design/icons';
 
-
-
 export const StopBotton = () => {
   const [stopFlag, setStopFlag] = useState(false);
 
   const onClick = () => {
     sleepThisObj.stopFlag = !stopFlag;
     setStopFlag(!stopFlag);
-  }
+  };
 
   return (
     <Button
@@ -24,5 +22,5 @@ export const StopBotton = () => {
     >
       { stopFlag ? 'Start' : 'Pause'}
     </Button>
-  )
-}
+  );
+};
