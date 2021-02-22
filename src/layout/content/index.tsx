@@ -21,7 +21,7 @@ export const Content = () => {
     { value: 'start', num: 200, label: 'Start' },
     { value: 'end', num: 10000, label: 'End' },
     { value: 'step', num: 200, label: 'Step' },
-  ]); // 数据属性 
+  ]); // 数据属性
 
   function onConfigChange(cfg: IConfig) {
     if (loading) return;
@@ -51,7 +51,7 @@ export const Content = () => {
     }
 
     if (newValue.num < 200) {
-      newValue.num = 200
+      newValue.num = 200;
     } else if (newValue.num > 20000) {
       newValue.num = 20000;
     }

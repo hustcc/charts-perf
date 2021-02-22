@@ -15,19 +15,21 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
       enabled: false,
     },
     yAxis: {
-      title: null
+      title: null,
     },
     chart: {
       type: 'scatter',
       ...size,
     },
-    series: [{
-      data: _.map(data, item => [item[Z_FIELD], item[Y_FIELD]]),
-      showInLegend: false,
-    }],
+    series: [
+      {
+        data: _.map(data, item => [item[Z_FIELD], item[Y_FIELD]]),
+        showInLegend: false,
+      },
+    ],
   };
   const startTime = performance.now();
-  
+
   const myChart = new Highcharts.Chart(container, option);
 
   const endTime = performance.now();

@@ -26,6 +26,6 @@ export interface ChangeOption extends Omit<PerfDatum, 'time'> {
   readonly total: number;
 }
 
-export type OneDataType = { label: string, value: 'start' | 'end' | 'step', num: number };
+export type OneDataType = { label: string; value: 'start' | 'end' | 'step'; num: number };
 
 export type DataAttributeType = OneDataType[];

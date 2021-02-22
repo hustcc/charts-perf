@@ -15,7 +15,7 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
       enabled: false,
     },
     yAxis: {
-      title: null
+      title: null,
     },
     chart: {
       type: 'area',
@@ -25,23 +25,25 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
       area: {
         marker: {
           enabled: false,
-        }
-      }
+        },
+      },
     },
     xAxis: {
       categories: _.map(data, item => item[X_FIELD]),
     },
-    series: [{
-      data: _.map(data, item => item[Y_FIELD]),
-      showInLegend: false,
-    }],
+    series: [
+      {
+        data: _.map(data, item => item[Y_FIELD]),
+        showInLegend: false,
+      }，
+    ],
   };
   const startTime = performance.now();
 
   const myChart = new Highcharts.Chart(container, option);
 
   const endTime = performance.now();
-  
+
   await helpers.sleep();
 
   myChart.destroy();
