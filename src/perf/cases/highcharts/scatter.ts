@@ -34,8 +34,8 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
 
   const endTime = performance.now();
 
-  await sleep(); 
-  
+  await sleep();
+
   await block();
 
   myChart.destroy();
