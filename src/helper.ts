@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 import { M } from 'miz'; // ES6
 
 export const sleepThisObj = {
-  stopFlag: false,
+  paused: false,
 };
 
 /**
@@ -65,12 +65,21 @@ export const mock = _.memoize((length: number, x: string = X_FIELD, y: string = 
   ).mock()
 );
 
-// 阻塞进程
+// 延迟
 export function sleep(ms: number = 50): Promise<boolean> {
   return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true);
+    }, ms);
+  });
+}
+
+// 阻塞 初始化不需要延迟 阻塞ms为100
+export function block(ms: number = 0): Promise<boolean> {
+  return new Promise((resolve) => {
     setTimeout(async () => {
-      if (!_.isUndefined(sleepThisObj?.stopFlag) && sleepThisObj?.stopFlag) {
-        await sleep();
+      if (!_.isUndefined(sleepThisObj?.paused) && sleepThisObj?.paused) {
+        await block(100);
       }
       resolve(true);
     }, ms);

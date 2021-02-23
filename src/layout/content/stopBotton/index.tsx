@@ -8,7 +8,7 @@ export const StopBotton = () => {
   const [stopFlag, setStopFlag] = useState(false);
 
   const onClick = () => {
-    sleepThisObj.stopFlag = !stopFlag;
+    sleepThisObj.paused = !stopFlag;
     setStopFlag(!stopFlag);
   };
 

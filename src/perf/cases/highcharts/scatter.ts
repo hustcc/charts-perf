@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as Highcharts from 'highcharts';
 import { Data } from '../../../types';
-import { Z_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import { Z_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
 
 /**
  * @param container
@@ -28,14 +28,15 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
       },
     ],
   };
-
   const startTime = performance.now();
 
   const myChart = new Highcharts.Chart(container, option);
 
   const endTime = performance.now();
 
-  await sleep();
+  await sleep(); 
+  
+  await block();
 
   myChart.destroy();
 

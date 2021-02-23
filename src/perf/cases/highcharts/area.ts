@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as Highcharts from 'highcharts';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size, sleep } from '../../../helper';
+import { X_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
 
 /**
  * @param container
@@ -38,7 +38,6 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
       },
     ],
   };
-
   const startTime = performance.now();
 
   const myChart = new Highcharts.Chart(container, option);
@@ -46,6 +45,8 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
   const endTime = performance.now();
 
   await sleep();
+
+  await block();
 
   myChart.destroy();
 
