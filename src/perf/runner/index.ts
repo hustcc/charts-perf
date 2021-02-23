@@ -71,7 +71,7 @@ export async function run(engines: string[], types: ChartType[], dataAttribute: 
   for (const engine of engines) {
     for (const type of types) {
       for (const length of seq) {
-        const perfDatum = await runPerfCase(engine, type, length, _.shuffle(mockData).slice(0, length));
+        const perfDatum = await runPerfCase(engine, type, length, _.shuffle(mockData));
 
         count++;
         changeBreadCrumb({ engine, type, length, amount, count, total });
