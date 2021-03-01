@@ -4,7 +4,7 @@ import { Button } from 'antd';
 import { sleepThisObj } from '../../../helper';
 import { PauseOutlined, CaretRightOutlined } from '@ant-design/icons';
 
-export const StopBotton = () => {
+export const StopButton = () => {
   const [stopFlag, setStopFlag] = useState(false);
 
   const onClick = () => {

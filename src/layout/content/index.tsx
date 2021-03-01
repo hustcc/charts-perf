@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { useState } from 'react';
 import { Result } from './result';
 import { Config, IConfig } from './config';
-import { StopBotton } from './stopBotton';
+import { StopButton } from './stopButton';
 import { run } from '../../perf/runner';
 import { ENGINES } from '../../common/const';
 import { PerfData, DataAttributeType, OneDataType } from '../../types';
@@ -90,7 +90,7 @@ export const Content = () => {
             <div id="modalBody" className="modalBody">
               <div className="modalMessageControl">
                 <div className="stopRender">
-                  <StopBotton />
+                  <StopButton />
                 </div>
                 <div className="breadCrumb">
                   <div className="accounted" />
