@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React, { useState } from 'react';
 import { Result } from './result';
 import { Config, IConfig } from './config';
+import { StopButton } from './stopButton';
 import { run } from '../../perf/runner';
 import { ENGINES } from '../../common/const';
 import { PerfData, DataAttributeType, OneDataType } from '../../types';
@@ -87,10 +88,15 @@ export const Content = () => {
         {loading && (
           <div>
             <div id="modalBody" className="modalBody">
-              <div className="breadCrumb">
-                <div className="accounted" />
-                <div className="progress" />
-                <div className="progressBackground" />
+              <div className="modalMessageControl">
+                <div className="stopRender">
+                  <StopButton />
+                </div>
+                <div className="breadCrumb">
+                  <div className="accounted" />
+                  <div className="progress" />
+                  <div className="progressBackground" />
+                </div>
               </div>
             </div>
             <div className="maskDiv" />
