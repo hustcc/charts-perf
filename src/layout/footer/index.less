@@ -1,18 +1,19 @@
-.foorter {
-  width: 100%;
+.flexBoxStyleCenter {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foorter {
+  &:extend(.flexBoxStyleCenter);
+  width: 100%;
   position: fixed;
   bottom: 0;
-  justify-content: center;
-  align-items: center;
   background-color: #000;
   color: #f5f5f5;
-
   .foorterMain {
+    &:extend(.flexBoxStyleCenter);
     height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     .foorterText {
       font-size: 12px;
       span {

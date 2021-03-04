@@ -1,3 +1,9 @@
+.flexBoxStyleCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .resultsChartLine {
   width: 100%;
   margin-bottom: 40px;
@@ -6,28 +12,20 @@
     box-shadow: 0 2px 8px #eee;
     min-height: 300px;
     margin: 20px 0;
+    padding: 16px;
     .containerTitle {
-      margin-left: 16px;
+      color: #000;
       font-weight: 400;
-      color: rgba(0, 0, 0);
-      padding-top: 8px;
     }
     .renderLine {
+      &:extend(.flexBoxStyleCenter);
       position: relative;
       width: 100%;
-      padding: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       > div {
         flex: 1;
       }
-
       .loadingSpin {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        &:extend(.flexBoxStyleCenter);
       }
     }
   }

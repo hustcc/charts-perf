@@ -2,6 +2,11 @@
   display: flex;
   justify-content: center;
 }
+.flexBoxColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .content {
   &:extend(.flexBoxStyleCenter);
@@ -24,6 +29,7 @@
     }
   }
   .modalBody {
+    &:extend(.flexBoxColumn);
     top: 0;
     left: 0;
     right: 0;
@@ -35,14 +41,10 @@
     z-index: 2;
     background: #fff;
     box-shadow: 0 2px 8px #f0f1f2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 5px;
     .modalMessageControl {
       &:extend(.flexBoxStyleCenter);
-      flex-direction: column;
-      align-items: center;
+      &:extend(.flexBoxColumn);
       width: 100%;
       .breadCrumb {
         &:extend(.flexBoxStyleCenter);
@@ -52,19 +54,16 @@
         height: 28px;
         border-radius: 4px;
         overflow: hidden;
-        line-height: 18px;
         margin: 16px 0;
         position: relative;
         align-items: center;
         .accounted {
           flex: 5;
-          position: relative;
           z-index: 10;
           text-indent: 50px;
         }
         .progress {
           flex: 2;
-          position: relative;
           z-index: 10;
         }
         .progressBackground {
@@ -92,11 +91,8 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .modalBody {
-      width: 90%;
-      height: 80%;
-      padding-top: 10px;
       .modalMessageControl {
         .breadCrumb {
           flex-direction: column;
@@ -106,7 +102,6 @@
             width: 100%;
             flex: 1;
             text-align: center;
-            text-indent: 0;
           }
           .accounted {
             text-indent: 5%;
