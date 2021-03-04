@@ -97,13 +97,13 @@ export const Result = (props: Props) => {
               </div>
             ) : perfData[type] ? (
               <G2Plot
-                style={{ width: "90%" }}
+                style={{ width: '90%' }}
                 options={{ ...LINE_CONFIG, data: (perfData[type] || []).map((d) => ({ ...d, length: `${d.length}` })) }}
                 Ctor={Line}
               />
             ) : (
-                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={false} style={{ paddingTop: '150px' }} />
-                )}
+              <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={false} style={{ paddingTop: '150px' }} />
+            )}
           </div>
         </div>
       ))}
