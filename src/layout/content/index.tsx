@@ -86,7 +86,7 @@ export const Content = () => {
         </div>
         {loading && (
           <div>
-            <div id="modalBody" className="modalBody" >
+            <div id="modalBody" className="modalBody">
               <div className="modalMessageControl">
                 <div className="stopRender">
                   <StopButton />
