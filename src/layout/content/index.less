@@ -8,8 +8,9 @@
   width: 100%;
   margin-top: 72px;
   .contentMain {
-    width: 1280px;
-    padding: 20px 0;
+    max-width: 1280px;
+    width: 100%;
+    padding: 16px;
     display: flex;
     flex-direction: column;
 
@@ -48,7 +49,7 @@
         font-size: 12px;
         background: #f5f5f5;
         width: 90%;
-        height: 18px;
+        height: 28px;
         border-radius: 4px;
         overflow: hidden;
         line-height: 18px;
@@ -81,7 +82,40 @@
         margin-top: 10px;
       }
     }
+    .renderDom {
+      flex: 1;
+      width: 90%;
+      > div {
+        width: 100%;
+        height: 90%;
+      }
+    }
   }
+
+  @media (max-width: 800px) {
+    .modalBody {
+      width: 90%;
+      height: 80%;
+      padding-top: 10px;
+      .modalMessageControl {
+        .breadCrumb {
+          flex-direction: column;
+          height: 40%;
+          .accounted,
+          .progress {
+            width: 100%;
+            flex: 1;
+            text-align: center;
+            text-indent: 0;
+          }
+          .accounted {
+            text-indent: 5%;
+          }
+        }
+      }
+    }
+  }
+
   .maskDiv {
     top: 0;
     left: 0;

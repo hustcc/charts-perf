@@ -14,7 +14,7 @@ async function runPerfCase(engine: string, type: ChartType, length: number, mock
   const perfCase = getPerfCase(engine, type);
 
   // 创建容器
-  const div = createDIV(document.getElementById('modalBody'));
+  const div = createDIV(document.getElementById('renderDom'));
 
   // 执行
   const time = await perfCase(div, mockData.slice(0, length)); // TODO 优化一下 slice，具备有一定的随机性

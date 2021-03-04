@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as Highcharts from 'highcharts';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
+import { X_FIELD, Y_FIELD, sleep, block } from '../../../helper';
 
 /**
  * @param container
@@ -20,7 +20,6 @@ export async function Bar(container: HTMLElement, data: Data): Promise<number> {
     xAxis: {
       categories: _.map(data, (item) => item[X_FIELD]),
     },
-    chart: size,
     series: [
       {
         type: 'column',
