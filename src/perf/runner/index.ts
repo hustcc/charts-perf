@@ -48,7 +48,7 @@ function changeBreadCrumb({ engine, type, length, amount, count, total }: Change
   );
   const percent = `${_.round((count / amount) * 100, 2)}%`;
   // 完成度显示
-  _.set(document.getElementsByClassName('progress'), '[0].innerHTML', `Finished: ${percent}`);
+  _.set(document.getElementsByClassName('progress'), '[0].innerHTML', `Finished: <span>${percent}</span> `);
   // 进度条样式
   _.set(document.getElementsByClassName('progressBackground'), '[0].style.width', percent);
 }
