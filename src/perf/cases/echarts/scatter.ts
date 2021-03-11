@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import * as echarts from 'echarts';
 import { Data } from '../../../types';
-import { Z_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
+import { Z_FIELD, Y_FIELD, sleep, block } from '../../../helper';
 
 /**
  * @param container
@@ -10,7 +10,7 @@ import { Z_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
 export async function Scatter(container: HTMLElement, data: Data): Promise<number> {
   const startTime = performance.now();
 
-  const myChart = echarts.init(container, undefined, size);
+  const myChart = echarts.init(container);
   const option = {
     grid: {
       top: 10,

@@ -52,9 +52,8 @@ export const Content = () => {
 
     if (newValue.num < 200) {
       newValue.num = 200;
-    } else if (newValue.num > 20000) {
-      newValue.num = 20000;
     }
+
     if (index === 0) {
       if (newValue.num > newDataAttribute[1].num) {
         newValue.num = newDataAttribute[1].num;
@@ -98,6 +97,8 @@ export const Content = () => {
                   <div className="progressBackground" />
                 </div>
               </div>
+              {/* 渲染用dom */}
+              <div id="renderDom" className="renderDom" />
             </div>
             <div className="maskDiv" />
           </div>

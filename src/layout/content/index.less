@@ -2,14 +2,28 @@
   display: flex;
   justify-content: center;
 }
+.flexBoxColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.floatTextCommonStyle {
+  float: left;
+  z-index: 10;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  min-width: 150px;
+}
 
 .content {
   &:extend(.flexBoxStyleCenter);
   width: 100%;
   margin-top: 72px;
   .contentMain {
-    width: 1280px;
-    padding: 20px 0;
+    max-width: 1280px;
+    width: 100%;
+    padding: 16px;
     display: flex;
     flex-direction: column;
 
@@ -23,48 +37,47 @@
     }
   }
   .modalBody {
+    &:extend(.flexBoxColumn);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 900px;
-    height: 600px;
+    width: 90%;
+    height: 60%;
     position: fixed;
     z-index: 2;
     background: #fff;
     box-shadow: 0 2px 8px #f0f1f2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 5px;
     .modalMessageControl {
       &:extend(.flexBoxStyleCenter);
-      flex-direction: column;
-      align-items: center;
+      &:extend(.flexBoxColumn);
       width: 100%;
       .breadCrumb {
-        &:extend(.flexBoxStyleCenter);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
         font-size: 12px;
         background: #f5f5f5;
         width: 90%;
-        height: 18px;
         border-radius: 4px;
         overflow: hidden;
-        line-height: 18px;
         margin: 16px 0;
         position: relative;
-        align-items: center;
+        text-align: center;
         .accounted {
-          flex: 5;
-          position: relative;
-          z-index: 10;
-          text-indent: 50px;
+          &:extend(.floatTextCommonStyle);
+          width: 70%;
         }
         .progress {
-          flex: 2;
-          position: relative;
-          z-index: 10;
+          &:extend(.floatTextCommonStyle);
+          width: 30%;
+          > span {
+            text-align: left;
+            width: 50px;
+            display: inline-block;
+          }
         }
         .progressBackground {
           position: absolute;
@@ -79,6 +92,14 @@
       .stopRender {
         z-index: 10;
         margin-top: 10px;
+      }
+    }
+    .renderDom {
+      flex: 1;
+      width: 90%;
+      > div {
+        width: 100%;
+        height: 90%;
       }
     }
   }

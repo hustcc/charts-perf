@@ -1,6 +1,6 @@
 import { Scatter as ScatterG2plot } from '@antv/g2plot';
 import { Data } from '../../../types';
-import { Z_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
+import { Z_FIELD, Y_FIELD, sleep, block } from '../../../helper';
 
 /**
  * @param container
@@ -13,7 +13,6 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
     data,
     xField: Z_FIELD,
     yField: Y_FIELD,
-    ...size,
   });
 
   scatter.render();

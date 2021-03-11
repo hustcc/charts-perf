@@ -1,6 +1,6 @@
 import { Area as AreaG2plot } from '@antv/g2plot';
 import { Data } from '../../../types';
-import { X_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
+import { X_FIELD, Y_FIELD, sleep, block } from '../../../helper';
 
 /**
  * @param container
@@ -13,7 +13,6 @@ export async function Area(container: HTMLElement, data: Data): Promise<number> 
     data,
     xField: X_FIELD,
     yField: Y_FIELD,
-    ...size,
   });
 
   area.render();

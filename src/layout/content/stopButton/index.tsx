@@ -18,7 +18,7 @@ export const StopButton = () => {
       type="primary"
       shape="round"
       icon={stopFlag ? <CaretRightOutlined /> : <PauseOutlined />}
-      size="small"
+      size="middle"
     >
       {stopFlag ? 'Start' : 'Pause'}
     </Button>
