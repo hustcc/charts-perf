@@ -1,10 +1,12 @@
 import _ from 'lodash';
 import React, { useState } from 'react';
+import { Tabs } from 'antd';
 import { Result } from './result';
 import { Config, IConfig } from './config';
 import { StopButton } from './stopButton';
 import { run } from '../../perf/runner';
 import { ENGINES } from '../../common/const';
+import { Speedtest } from './speedtest';
 import { PerfData, DataAttributeType, OneDataType } from '../../types';
 
 import './index.less';
@@ -72,7 +74,9 @@ export const Content = () => {
 
   return (
     <div className="content">
-      <div className="contentMain">
+       <Tabs defaultActiveKey="2">
+        <Tabs.TabPane tab="Render performance comparison" key="1">
+        <div className="contentMain">
         <Config
           loading={loading}
           types={config.types}
@@ -103,6 +107,11 @@ export const Content = () => {
           </div>
         )}
       </div>
+        </Tabs.TabPane>
+        <Tabs.TabPane tab="Speedtest or real-time live data streaming of G2Plot" key="2">
+          <Speedtest />
+        </Tabs.TabPane>
+      </Tabs>
     </div>
   );
 };
