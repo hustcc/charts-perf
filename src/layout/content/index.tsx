@@ -74,39 +74,39 @@ export const Content = () => {
 
   return (
     <div className="content">
-       <Tabs defaultActiveKey="2">
+      <Tabs defaultActiveKey="2">
         <Tabs.TabPane tab="Render performance comparison" key="1">
-        <div className="contentMain">
-        <Config
-          loading={loading}
-          types={config.types}
-          engines={config.engines}
-          inputNumberData={dataAttribute}
-          onOk={onOk}
-          onChange={onConfigChange}
-          onInputNumberChange={onInputNumberChange}
-        />
-        <div className="contentResults">
-          <Result loading={loading} config={config} perfData={perfData} />
-        </div>
-        {loading && (
-          <div>
-            <div id="modalBody" className="modalBody">
-              <div className="modalMessageControl">
-                <div className="stopRender">
-                  <StopButton />
-                </div>
-                <div className="breadCrumb">
-                  <div className="accounted" />
-                  <div className="progress" />
-                  <div className="progressBackground" />
-                </div>
-              </div>
+          <div className="contentMain">
+            <Config
+              loading={loading}
+              types={config.types}
+              engines={config.engines}
+              inputNumberData={dataAttribute}
+              onOk={onOk}
+              onChange={onConfigChange}
+              onInputNumberChange={onInputNumberChange}
+            />
+            <div className="contentResults">
+              <Result loading={loading} config={config} perfData={perfData} />
             </div>
-            <div className="maskDiv" />
+            {loading && (
+              <div>
+                <div id="modalBody" className="modalBody">
+                  <div className="modalMessageControl">
+                    <div className="stopRender">
+                      <StopButton />
+                    </div>
+                    <div className="breadCrumb">
+                      <div className="accounted" />
+                      <div className="progress" />
+                      <div className="progressBackground" />
+                    </div>
+                  </div>
+                </div>
+                <div className="maskDiv" />
+              </div>
+            )}
           </div>
-        )}
-      </div>
         </Tabs.TabPane>
         <Tabs.TabPane tab="Speedtest or real-time live data streaming of G2Plot" key="2">
           <Speedtest />
