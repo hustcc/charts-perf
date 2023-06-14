@@ -1,6 +1,6 @@
 import { Chart } from '@antv/g2';
 import { Data } from '../../../types';
-import { Z_FIELD, Y_FIELD, size, sleep, block } from '../../../helper';
+import { Z_FIELD, Y_FIELD, sleep, block } from '../../../helper';
 
 /**
  * @param container
@@ -11,8 +11,9 @@ export async function Scatter(container: HTMLElement, data: Data): Promise<numbe
 
   const chart = new Chart({
     container,
-    ...size,
+    autoFit: true,
   });
+
   chart.data(data);
   chart.point().position(`${Z_FIELD}*${Y_FIELD}`);
 

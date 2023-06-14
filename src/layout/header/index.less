@@ -1,22 +1,24 @@
+.flexBoxStyleCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
+  &:extend(.flexBoxStyleCenter);
   width: 100%;
   height: 56px;
   background-color: #873bf4;
   top: 0;
   position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 2;
-
   box-shadow: 0 2px 8px #873bf4;
   .headerMain {
+    &:extend(.flexBoxStyleCenter);
     padding: 0 16px;
     max-width: 1280px;
     width: 100%;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     .headerTitle {
       font-size: 18px;
       color: #fff;

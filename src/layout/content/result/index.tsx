@@ -97,6 +97,7 @@ export const Result = (props: Props) => {
               </div>
             ) : perfData[type] ? (
               <G2Plot
+                style={{ width: '90%' }}
                 options={{ ...LINE_CONFIG, data: (perfData[type] || []).map((d) => ({ ...d, length: `${d.length}` })) }}
                 Ctor={Line}
               />

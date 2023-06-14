@@ -14,7 +14,7 @@ async function runPerfCase(engine: string, type: ChartType, length: number, mock
   const perfCase = getPerfCase(engine, type);
 
   // 创建容器
-  const div = createDIV(document.getElementById('modalBody'));
+  const div = createDIV(document.getElementById('renderDom'));
 
   // 执行
   const time = await perfCase(div, mockData.slice(0, length)); // TODO 优化一下 slice，具备有一定的随机性
@@ -48,7 +48,7 @@ function changeBreadCrumb({ engine, type, length, amount, count, total }: Change
   );
   const percent = `${_.round((count / amount) * 100, 2)}%`;
   // 完成度显示
-  _.set(document.getElementsByClassName('progress'), '[0].innerHTML', `Finished: ${percent}`);
+  _.set(document.getElementsByClassName('progress'), '[0].innerHTML', `Finished: <span>${percent}</span> `);
   // 进度条样式
   _.set(document.getElementsByClassName('progressBackground'), '[0].style.width', percent);
 }

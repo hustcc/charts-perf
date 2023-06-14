@@ -4,6 +4,8 @@ import { Form, Button, Checkbox, Row, InputNumber } from 'antd';
 import { ENGINES, CHART_TYPES } from '../../../common/const';
 import { ChartType, DataAttributeType, OneDataType } from '../../../types';
 
+import './index.less';
+
 export type IConfig = {
   engines: string[];
   types: ChartType[];
@@ -43,7 +45,17 @@ export function Config(props: Props) {
   const allInputNumberStyle = {
     precision: 0,
     step: 100,
+    size: 'middle',
+    style: {
+      margin: '0 10px',
+    },
   };
+
+  const runButton = (
+    <Button loading={loading} type="primary" onClick={!loading && onOk}>
+      Run Performance Test
+    </Button>
+  );
 
   return (
     <>
@@ -64,22 +76,19 @@ export function Config(props: Props) {
         </Form.Item>
         <Form.Item label="Render Data Size">
           {_.map(inputNumberData, (item, index) => (
-            <Form.Item noStyle key={item.value}>
-              <span className="ant-form-text">{item.label}</span>
-              <InputNumber
-                size="small"
-                {...allInputNumberStyle}
-                value={item.num}
-                onChange={(value) => onInputNumberChange({ ...item, num: value as number }, index)}
-              />
+            <Form.Item key={item.value}>
+              <div className="inputNumberDiv">
+                <span>{item.label}</span>
+                <InputNumber
+                  {...allInputNumberStyle}
+                  value={item.num}
+                  onChange={(value) => onInputNumberChange({ ...item, num: value as number }, index)}
+                />
+              </div>
             </Form.Item>
           ))}
         </Form.Item>
-        <Form.Item wrapperCol={{ span: 14, offset: 4 }}>
-          <Button loading={loading} type="primary" onClick={!loading && onOk}>
-            Run Performance Test
-          </Button>
-        </Form.Item>
+        {runButton}
       </Form>
     </>
   );

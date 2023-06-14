@@ -41,13 +41,6 @@ export const X_FIELD = 'x';
 export const Y_FIELD = 'y';
 export const Z_FIELD = 'z';
 
-// 容器宽高
-export const size = {
-  // 长宽
-  height: 500,
-  width: 800,
-};
-
 /**
  * 数据 mock，根据数据量缓存
  * @param length
