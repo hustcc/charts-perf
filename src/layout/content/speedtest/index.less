@@ -1,0 +1,30 @@
+.speedtest-content {
+  display: flex;
+  height: 400px;
+  width: 1280px;
+  margin: 24px auto;
+
+  > div:nth-child(1) {
+    flex: 1;
+  }
+  > div:nth-child(2) {
+    width: 320px;
+    margin-left: 40px;
+  }
+
+  .name {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .description {
+    margin: 4px 0;
+    color: rgba(0, 0, 0, 0.85);
+
+    > .flex {
+      display: flex;
+      max-width: 200px;
+      justify-content: space-between;
+    }
+  }
+}
